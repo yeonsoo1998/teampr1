@@ -1,0 +1,23 @@
+@keyframes pumkinMove {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(30deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-30deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.pumpkin_size {
+  animation: pumkinMove 3s infinite;
+  position: absolute;
+}
