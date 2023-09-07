@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style/character.css" />
+    <link rel="stylesheet" href="style/ghoststyle.css" />
+    <link rel="stylesheet" href="style/skullstyle.css" />
+  </head>
+  <body>
+    <div id="main_box">
+      <div id="character_box">
+        <button id="character_1" class="character" value="ghost_cursor">
+          동동이
+        </button>
+        <button id="character_2" class="character" value="skull_cursor">
+          골골이
+        </button>
+        <!-- <button id="character_3" class="character" value="3">character3</button> -->
+      </div>
+      <div id="character_info">
+        <div id="character_info_box">
+          <div id="character_name">누가 나올지 궁금한데?</div>
+          <div id="character_Description"></div>
+        </div>
+      </div>
+      <div id="comment_box">
+        <div id="comment">
+          <textarea id="comment-id">닉네임</textarea>
+          <textarea
+            id="comment-text"
+            name=""
+            cols="30"
+            rows="1"
+            placeholder="댓글을 남겨보세요"
+            class="comments"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="cursor">
+      <div class="ghost_cursor cursor_list" style="display: none">
+        <div class="ghost">
+          <div class="body">
+            <div class="face">
+              <div class="eye"></div>
+              <div class="eye"></div>
+              <div class="mouse"></div>
+            </div>
+          </div>
+          <div class="bottom">
+            <div class="leg"></div>
+            <div class="leg"></div>
+            <div class="leg"></div>
+            <div class="leg"></div>
+            <div class="leg"></div>
+          </div>
+          <div id="user_name" class="ghost_text"></div>
+          <div id="user_text" class="ghost_text"></div>
+        </div>
+      </div>
+      <div class="skull_cursor cursor_list" style="display: none">
+        <div class="skull">
+          <div class="body">
+            <div class="face">
+              <div class="eye"></div>
+              <div class="eye"></div>
+              <div class="mouse"></div>
+            </div>
+          </div>
+          <div class="bottom">
+            <div class="leg"></div>
+            <div class="leg"></div>
+            <div class="leg"></div>
+            <div class="leg"></div>
+            <div class="leg"></div>
+          </div>
+          <div id="user_name" class="ghost_text"></div>
+          <div id="user_text" class="ghost_text"></div>
+        </div>
+      </div>
+    </div>
+    <script src="src/character.js"></script>
+  </body>
+</html>
