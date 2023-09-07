@@ -30,7 +30,7 @@ const character_description = (e) => {
     </p>`,
     skull_cursor: `<p>골골 거려서 골골이야!</p><p>너를 놀래주기 위해 <br />쫓아다니고 있어!</p>`,
     pumpkin_cursor:
-      "<p>나는 오싹오싹 호박이야!</p><p>너를 놀래주기 위해 <br />숨어 있어!</p>",
+      "<p>나는 오싹오싹 호박이야!</p><p>너를 놀래주기 위해 <br />쫓아다니고 있어!</p>",
   };
   return text[e];
 };
@@ -84,13 +84,13 @@ const ghost_cursor = (select_cursor) => {
 
 const background_selector = async (value) => {
   if (value == "ghost_cursor") {
-    let url = 'url("../img/background1.jpg")';
+    let url = 'url("img/background1.jpg")';
     document.body.style.backgroundImage = url;
   } else if (value == "skull_cursor") {
-    let url = 'url("../img/background2.jpg")';
+    let url = 'url("img/background2.jpg")';
     document.body.style.backgroundImage = url;
   } else if (value == "pumpkin_cursor") {
-    let url = 'url("../img/background3.jpg")';
+    let url = 'url("img/background3.jpg")';
     document.body.style.backgroundImage = url;
   }
 };
