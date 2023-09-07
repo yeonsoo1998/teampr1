@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0">
+    <title>how to use</title>
+
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: 0.297fr 1fr 1fr;
+            grid-row: 300px 1fr;
+            row-gap: 50px;
+            gap: 30px;
+            grid-template-areas: 
+            "box1 box1 box1"
+            "box2 box3 box3"
+            "none box3 box3"
+            "none box3 box3"
+            ". . ."
+            "footer footer footer";
+        }
+        .box{padding: 10px;}
+        .box1{background-color:black; color:aliceblue; grid-area: box1;}
+        .box2{background-color: rgba(50,120,13); grid-area: box2; text-align: center; color: white; border-radius: 10%;}
+        .box3{background-color: white; grid-area: box3; width: 95%; border: 1px solid black; line-height: 30px;}
+        
+        .footer{background-color: aqua; grid-area: footer;}
+
+        .menu{
+            padding: 10px;
+            text-align: center;
+            font-size: 15px;
+        }
+        .menu:hover{
+            background-color: bisque; color: black;
+        }
+        body{background-image: url(img/back.jpg); background-repeat: no-repeat; background-attachment: fixed;}
+    </style>
+    <script src="how_use.js"></script>
+</head>
+<body>  
+    <div id = "container">
+        <div class="box box1">head</div>
+        <div class="box box2" id="menubar">
+            <div> 요금 & 멤버십 <hr>
+                <div onclick="hrefLink_price()" class="menu"> 이용요금 </div>
+                <div onclick="hrefLink_card()" class="menu"> 제휴카드 </div>
+                <div onclick="hrefLink_mbs()" class="menu"> 멤버십 </div>
+            </div>
+        </div>
+        <div class="box box3">제휴 카드 <hr>
+            <ul> 
+                <li> 제휴카드 결제 시 대인요금 기준에서 적용됩니다.</li>
+                <li> 방문일 기준 1일 1회 카드 명의자 본인 결제에 한합니다.</li>
+                <li> 카드 별 이용조건 충족 시 적용되며, 카드 별 이용 조건 등 자세한 사항은 해당 카드사로 문의하시기 바랍니다.</li>
+                <li> 카드사 및 카드종류에 따라 온라인 예매 불가 및 우대가능(이용 실적 충족) 확인이 불가할 수도 있습니다.</li>
+                <li> 청구할인카드는 에버랜드 현장 결제 시 적용되며, 자세한 내용은 각 카드사로 확인해주시기 바랍니다.</li>
+                <li> 카드 청구취소 반영은 3~5일의 기간이 소요됩니다(주말/공휴일 제외)</li>
+                <li> 제휴카드 할인은 타 할인혜택과 중복 적용되지 않습니다.</li>
+                <li> 아래 외 기타카드의 경우 카드사 홈페이지를 통해서 확인 바랍니다.</li>
+            </ul>
+            <br>     
+
+            <div style="text-align: left; padding: 10px;" >
+                    <span  style="padding: 8px; border: 1px solid black; margin: 5px;" >제휴카드 </span>
+                    <span> <input> </span>
+                    <button onclick="search()"> 검색 </button>   
+            </div>
+            <br>
+            <br>
+        </div>
+
+        
+        <div class="box footer">footer</div>
+
+    </div>
+
+    
+</body>
+</html>
+
+<!-- #wrapper{
+            display: grid;
+            grid-template-columns: repeat(3. 1fr);
+            grid-template-rows: repeat(3, 100px);
+            grid-template-areas: 
+            "box1 box1 box1"
+            "box2 box3 box3"
+            "box2 . box4";
+        }-->
