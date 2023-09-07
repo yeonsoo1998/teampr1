@@ -1,0 +1,25 @@
+
+.reserve{
+    margin-top: 10px;
+    width: 400px;
+    height: 500px;
+    border: 1px solid rgba(211, 210, 210, 0.926);
+    float: right;
+    border-radius: 1em;
+}
+ p{
+    margin-left: 30px;
+    font-weight: bold;
+ }
+ span{
+    margin-left: 210px;
+ }
+.hr_st{
+    background:rgb(136, 131, 131);
+    width: 350px;
+}
+.hr_st1{
+    background:rgb(15, 14, 14);
+    width: 300px;
+    height: 1px;
+}
