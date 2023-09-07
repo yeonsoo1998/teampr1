@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>호박이</title>
+    <style>
+        body{
+            width: 100%;
+            background-color: black;
+        }
+        #pumpKinGhost{
+            margin-top: 10%;
+            margin-left : 20%;
+        }
+        #pumpkinBoy{
+            margin-left : 20%;
+            color: rgb(245, 135, 38);
+            font-size: 30px;
+            
+        }
+        #pumpkin{
+            justify-content:center;
+            align-items:center;
+            margin-left: 50%;
+            position: absolute;
+            top: 500px;
+            z-index: 1;
+        }
+        #pumpkin_img{
+            width: 45em;
+            justify-content:center;
+            align-items:center;
+            margin-left: 55%;
+            position: absolute;
+            top: 300px;
+            z-index: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id ="pumpKinGhost" width="600" height="280"></canvas>
+    <script>
+    const myCanvas10 = document.querySelector('#pumpKinGhost');
+    const ctx10 = myCanvas10.getContext("2d");
+
+        ctx10.beginPath();
+        ctx10.font = "bold 140px Algerian"
+        ctx10.fillText("Pumpkin", 0, 100)
+        ctx10.fillText("Ghost", 140, 250)
+
+        ctx10.globalCompositeOperation = "source-in"
+
+        let img_pumpkin = new Image();
+        img_pumpkin.src = "pumpkin.jpg"
+        img_pumpkin.onload = function(){
+            ctx10.drawImage(img_pumpkin, 0, 0, myCanvas10.width, myCanvas10.height)
+        }
+    </script>
+
+    <div id = pumpkinBoy><h1>할로윈 파크의 자랑!</h1>
+        <div>호박이는 사람들을 놀래키는걸 좋아해요!</div>
+        <div>안타깝지만 호박이는 다리가 없어 날아다니지 못해요...</div>
+        <div>날아다니는 동동이와 둘도 없는 친구랍니다.</div>
+    </div>
+
+    <img id="pumpkin_img" src="hobakyi.png">
+
+</body>
+</html>
