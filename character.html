@@ -7,8 +7,38 @@
     <link rel="stylesheet" href="style/character.css" />
     <link rel="stylesheet" href="style/ghoststyle.css" />
     <link rel="stylesheet" href="style/skullstyle.css" />
+    <link rel="stylesheet" href="style/pumpkin.css" />
+    <link rel="stylesheet" href="style/pumpkin.css" />
   </head>
   <body>
+    <nav class="navbar">
+      <div class="navbar-logo">
+        Halloween
+        <a href="index.html"><img src="img/hallo.jpg" alt="로고" /></a>
+        <!--로고 이미지 클릭시 홈으로 이동-->
+      </div>
+      <ul class="navbar-menu" id="menu">
+        <li><a href="index.html">홈</a></li>
+        <li class="dropdown">
+          <a href="character.html">캐릭터</a>
+          <div class="dropdown-content">
+            <a href="character.html">캐릭터 1</a>
+            <a href="character.html">캐릭터 2</a>
+            <a href="character.html">캐릭터 3</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="how_use.html">요금/멤버십</a>
+          <div class="dropdown-content">
+            <a href="how_use.html">요금</a>
+            <a href="how_use_mbs.html">멤버십</a>
+          </div>
+        </li>
+        <li><a href="#">예약하기</a></li>
+      </ul>
+      <button class="navbar-toggle" id="toggleButton">메뉴</button>
+    </nav>
+
     <div id="main_box">
       <div id="character_box">
         <button id="character_1" class="character" value="ghost_cursor">
@@ -16,6 +46,9 @@
         </button>
         <button id="character_2" class="character" value="skull_cursor">
           골골이
+        </button>
+        <button id="character_3" class="character" value="pumpkin_cursor">
+          호박이
         </button>
         <!-- <button id="character_3" class="character" value="3">character3</button> -->
       </div>
@@ -27,15 +60,16 @@
       </div>
       <div id="comment_box">
         <div id="comment">
-          <textarea id="comment-id">닉네임</textarea>
-          <textarea
+          <input type="placeholder" id="comment-id" value="닉네임" />
+          <input
+            type="placeholder"
             id="comment-text"
             name=""
             cols="30"
             rows="1"
             placeholder="댓글을 남겨보세요"
             class="comments"
-          ></textarea>
+          />
         </div>
       </div>
     </div>
@@ -79,6 +113,9 @@
           <div id="user_name" class="ghost_text"></div>
           <div id="user_text" class="ghost_text"></div>
         </div>
+      </div>
+      <div class="pumpkin_cursor cursor_list" style="display: none">
+        <img class="pumpkin_size" src="img/hobakyi.png" alt="" />
       </div>
     </div>
     <script src="src/character.js"></script>
