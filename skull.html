@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skull</title>
+
+    <link rel="stylesheet" href="skullstyle.css">
+
+</head>
+<body>
+    
+    <div class="hero">
+        <h2>안녕? <br> 반가워 나는 골골이</h2>
+            <p>골골 거려서 골골이야!</p>
+            <p>너를 놀래주기 위해 <br> 쫓아다니고 있어!</p>
+    </div>
+    
+
+    <div class = "skull">
+        <div class = "body">
+            <div class = "face">
+                <div class = "eye"></div>
+                <div class = "eye"></div>
+                <div class = "mouse"></div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="leg"></div>
+            <div class="leg"></div>
+            <div class="leg"></div>
+            <div class="leg"></div>
+            <div class="leg"></div>
+        </div>
+    </div>
+    
+    
+    <script>
+        document.body.addEventListener("mousemove", function(e) {
+            console.log(e);
+            document.querySelector('.skull').style.left = e.pageX + 'px';
+            document.querySelector('.skull').style.top = e.pageY + 'px';
+        });
+    </script>
+    
+</body>
+</html>

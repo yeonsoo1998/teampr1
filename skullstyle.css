@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.hero {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 50px;
+    color:#fff
+
+    
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+}
+
+.skull {
+    animation: moveUpDown 0.2s infinite;
+    position: absolute;
+}
+
+@keyframes moveUpDown {
+    0% {
+        margin-top: 0px;
+    }
+
+    50% {
+        margin-top: 30px;
+    }
+
+    100%{
+        margin-top: 0px;
+    }
+}
+
+.skull .body{
+    width: 240px;
+    height: 200px;
+    background-color: #fff;
+    border-top-left-radius: 45%;
+    border-top-right-radius: 45%;
+    position: relative;
+}
+
+.skull .body .face{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 160px;
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.skull .body .face .eye{
+    width: 50px;
+    height: 50px;
+    border-radius: 40%;
+    background-color: #000;
+
+}
+
+.skull .body .face .mouse{
+    width: 25px;
+    height: 40px;
+    background-color: #000;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-left: 70px;
+    margin-top: 0px;
+}
+
+.skull .bottom {
+    display: flex;
+}
+
+.skull .bottom .leg{
+    background-color: #fff;
+    width: 48px;
+    height: 35px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.skull .bottom .leg:nth-child(2n) {
+    position: relative;
+    top: -6px;
+    background-color: #000;
+    border-radius: 1%;
+}
