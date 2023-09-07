@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0">
+    <title>how to use</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: 0.3fr 1fr 1fr;
+            grid-row: 300px 1fr;
+            row-gap: 50px;
+            gap: 30px;
+            grid-template-areas: 
+            "box1 box1 box1"
+            "box2 box3 box3"
+            "none box3 box3"
+            "none box3 box3"
+            ". . ."
+            "footer footer footer";
+        }
+        .box{padding: 10px;}
+        .box1{color:aliceblue; grid-area: box1;}
+        .box2{background-color: black; grid-area: box2; text-align: center; color: white; border-radius: 10%;}
+        .box3{background-color: white; grid-area: box3; width: 95%; border: 1px solid black; text-align: center;}
+        
+        .footer{grid-area: footer;}
+        .menu:hover{
+            background-color: bisque; color: black;
+        }
+        .mbs_head_text{
+            font-size: 50px;
+            font-weight: bold
+        }
+        .menu{
+            padding: 10px;
+            text-align: center;
+            font-size: 15px;
+        }
+        body{
+            background-image: url("img/backimg.png");background-size: contain; background-attachment:fixed;
+        }
+    </style>
+    <script src="how_use.js"></script>
+</head>
+<body>  
+    <nav class="navbar">
+        <div class="navbar-logo">Halloween
+            <a href="index.html"><img src="/img/hallo.jpg" alt="로고"></a> <!--로고 이미지 클릭시 홈으로 이동-->
+        </div>
+        <ul class="navbar-menu" id="menu">
+            <li><a href="index.html">홈</a></li>
+            <li class="dropdown">
+                <a href="#">캐릭터</a>
+                <div class="dropdown-content">
+                    <a href="#">캐릭터 1</a>
+                    <a href="#">캐릭터 2</a>
+                    <a href="#">캐릭터 3</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="how_use.html">요금/멤버십</a>
+                <div class="dropdown-content">
+                    <a href="how_use.html">요금</a>
+                    <a href="how_use_mbs.html">멤버십</a>
+                </div>
+            </li>
+            <li><a href="#">예약하기</a></li>
+        </ul>
+        <button class="navbar-toggle" id="toggleButton">메뉴</button>
+    </nav>
+    <div id = "container">
+        <div class="box box1">
+        </div>    
+        <div class="box box2" id="menubar">
+            <div> 요금 & 멤버십 <hr>
+                <div onclick="hrefLink_price()" class="menu"> 이용요금 </div>
+                <div onclick="hrefLink_card()" class="menu"> 제휴카드 </div>
+                <div onclick="hrefLink_mbs()" class="menu"> 멤버십 </div>
+            </div>
+        </div>
+        <div class="box box3"> <div style="text-align: left;">Membership & Event</div><br> <hr>
+            <div> <img src="img/promotion.jpg"> </div>
+            <hr>
+            <div class="mbs_head_text"> Event
+                <hr>
+                <div class="mbs_text 할인/프로모션 안내">
+                <div> 
+                    <table style="margin: 0 auto;">
+                        <tr>
+                            <th> <img src="img/halloween promotion.jpg"> </th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <hr>
+            <div class="mbs_head_text"> 멤버십 안내
+                <hr>
+                <div> 
+                    <table style="margin: 0 auto;">
+                        <tr>
+                            <th> <img src="img/mbslevel.jpg"></th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <hr>
+            <div class="mbs_head_text"> 멤버십 혜택
+                <hr>
+                <div> 
+                    <table style="margin: 0 auto;">
+                        <tr>
+                            <th> <img src="img/event_banner_comingsoon.png"> </th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box footer"><img src="img/footerimg.png" style="width: 100%;"></div>
+    
+</body>
+</html>
