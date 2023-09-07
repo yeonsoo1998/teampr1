@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예약을 원하시는 날짜를 선택해 주세요</title>
+    <style>
+        #content{
+           display: flex;
+        }
+        #calenda_content{
+            margin-left: 750px;
+
+        }
+        #time_content{
+            margin-left: 50px;
+            
+        }
+        .time_td{
+            border: 1px solid darkgray;
+            width: 100px;
+            border-radius: 2em;
+            
+        }
+        .buttonBox{
+            text-align: right;
+            margin-right: 200px;
+        }
+        .input_time{
+            margin-top: 10px;
+            text-align: center;
+        }
+        .input_time2{
+            margin-top: 10px;
+            text-align: center;
+            margin-left: -178px;
+        }
+        .reser{
+            font-size: 16px;
+            margin-top: 50px;
+            font-weight: bold;
+            margin-left: 775px;
+        }
+        
+        #time_text, #time_text2{
+        border: 1px solid rgba(137, 140, 137, 0.931);
+        height: 30px;
+        }
+        .pay{
+            margin-top: 70px;
+            font-weight: bold;
+            text-align: center;
+            width: 250px;
+            height: 50px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+        let today = new Date();
+        function buildCalendar(){
+          let row = null
+          let cnt = 0;
+          let calendarTable = document.getElementById("calendar");
+          let calendarTableTitle = document.getElementById("calendarTitle");
+          calendarTableTitle.innerHTML = today.getFullYear()+"년"+(today.getMonth()+1)+"월";
+          
+          let firstDate = new Date(today.getFullYear(), today.getMonth(), 1);
+          let lastDate = new Date(today.getFullYear(), today.getMonth()+1, 0);
+          while(calendarTable.rows.length > 2){
+              calendarTable.deleteRow(calendarTable.rows.length -1);
+          }
+        
+          row = calendarTable.insertRow();
+          for(i = 0; i < firstDate.getDay(); i++){
+              cell = row.insertCell();
+              cnt += 1;
+          }
+        
+          row = calendarTable.insertRow();
+        
+          for(i = 1; i <= lastDate.getDate(); i++){
+              cell = row.insertCell();
+              cnt += 1;
+        
+            cell.setAttribute('id', i); 
+              cell.innerHTML = i;
+              cell.align = "center";
+        
+            cell.onclick = function(){
+                clickedYear = today.getFullYear();
+                clickedMonth = ( 1 + today.getMonth() );
+                clickedDate = this.getAttribute('id');
+        
+                clickedDate = clickedDate >= 10 ? clickedDate : '0' + clickedDate;
+                clickedMonth = clickedMonth >= 10 ? clickedMonth : '0' + clickedMonth;
+                clickedYMD = clickedYear + "-" + clickedMonth + "-" + clickedDate;
+        
+                opener.document.getElementById("date").value = clickedYMD;
+                self.close();
+            }
+        
+            if (cnt % 7 == 1) {
+                cell.innerHTML = "<font color=red>" + i + "</font>";
+            }
+        
+            if (cnt % 7 == 0){
+                cell.innerHTML = "<font color=blue>" + i + "</font>";
+                row = calendar.insertRow();
+            }
+          }
+        
+          if(cnt % 7 != 0){
+              for(i = 0; i < 7 - (cnt % 7); i++){
+                  cell = row.insertCell();
+              }
+          }
+        }
+ 
+
+        
+        function prevCalendar(){
+            today = new Date(today.getFullYear(), today.getMonth()-1, today.getDate());
+            buildCalendar();
+        }
+        
+        function nextCalendar(){
+            today = new Date(today.getFullYear(), today.getMonth()+1, today.getDate());
+            buildCalendar();
+        }
+        
+        // const add_time = () =>{
+        //     let time = document.get
+        // }
+        
+        
+        </script>
+       
+        <div class="buttonBox">
+        <button class="button" type="button" onclick="tableinit()">초기화</button>
+        </div>
+
+        <div id="content">
+            <div id="calenda_content">
+        <table id="calendar" align="center">
+		<tr>
+			<td align="center"><label onclick="prevCalendar()"> ◀ </label></td>
+			<td colspan="5" align="center" id="calendarTitle">yyyy년 m월</td>
+			<td align="center"><label onclick="nextCalendar()"> ▶ </label></td>
+		</tr>
+		<tr>
+			<td align="center"><font color ="red">일</td>
+			<td align="center">월</td>
+			<td align="center">화</td>
+			<td align="center">수</td>
+			<td align="center">목</td>
+			<td align="center">금</td>
+			<td align="center"><font color ="blue">토</td>
+		</tr>
+    </table>
+        <script type="text/javascript">buildCalendar();</script>
+    </div>
+        <div id="time_content">
+            <table id="time_box" align="center">
+                <tr>
+                    <th style="width: 200px; font-size: 16px;">예약 가능시간</th>
+                </tr>
+                <tr><td class="time_td1" align="center" onclick="add_time()">09:00 ~ 10:00</td></tr>
+                
+                <tr><td class="time_td" align="center">10:00 ~ 11:00</td></tr>
+                <tr><td class="time_td" align="center">11:00 ~ 12:00</td></tr>
+                <tr><td class="time_td" align="center">12:00 ~ 13:00</td></tr>
+                <tr><td class="time_td" align="center">13:00 ~ 14:00</td></tr>
+                <tr><td class="time_td" align="center">14:00 ~ 15:00</td></tr>
+                <tr><td class="time_td" align="center">15:00 ~ 16:00</td></tr>
+                <tr><td class="time_td" align="center">16:00 ~ 17:00</td></tr>
+                <tr><td class="time_td" align="center">17:00 ~ 18:00</td></tr>
+                <tr><td class="time_td" align="center">18:00 ~ 19:00</td></tr>
+                <tr><td class="time_td" align="center">19:00 ~ 20:00</td></tr>
+            	</table>
+                </div>
+                </div>
+                <div class="reser">예약일시</div>
+                <div class="input_time">
+                    <input id="time_text" type="text"> 
+                    <input id="time_text" type="text"> 
+                </div>
+                <div class="reser">예약자 성함</div>
+                <div class="input_time2">
+                <input id="time_text2" type="text"> 
+                </div>
+                <div class="pay_box">
+                <div class="pay"><p>결제하기</p></div>
+                </div>
+
+</body>    
+</html>
